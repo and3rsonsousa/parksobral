@@ -1,41 +1,19 @@
-import type { MetaFunction } from "@vercel/remix";
+import { redirect, type MetaFunction } from "@vercel/remix";
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+	return [
+		{ title: "PARK Sobral" },
+		{
+			name: "description",
+			content: "Aventure-se na Melhor Culinária de Sobral",
+		},
+	];
+};
+
+export const loader = () => {
+	return redirect("https://parkchoppsobral.goomer.app", 301);
 };
 
 export default function Index() {
-  return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+	return <div></div>;
 }
